@@ -19,7 +19,6 @@ export default {
   plugins: [
     daisyui,
   ],
-  darkMode: false, // or 'media' or 'class'
     daisyui: {
     themes: [{light : 
       {
