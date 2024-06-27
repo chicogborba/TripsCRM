@@ -25,8 +25,8 @@ function useClientInfo(id: string | undefined): UseClientInfoReturn {
     { label: "Endereço de Email", type: "text", initialKey: "email"},
     { label: "CPF", type: "doc" , initialKey: "cpf"},
     { label: "Ocupação", type: "text" , initialKey: "job"},
-    { label: "Origém", type: "text" , initialKey: "origin"},
-    { label: "Primaira Consulta", type: "date" , initialKey: "firstTrip"},
+    { label: "Origem", type: "text" , initialKey: "origin"},
+    { label: "Primeira Consulta", type: "date" , initialKey: "firstTrip"},
     { label: "Recorrência", type: "text" , initialKey: "recurrence"},
   ];
 
