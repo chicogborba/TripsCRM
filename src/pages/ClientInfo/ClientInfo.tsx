@@ -8,8 +8,8 @@ import { useState } from "react";
 import useClientInfo, { InitialStateType } from "./useClientInfo";
 
 const ClientInfo = () => {
+    
     const { id } = useParams();
-
     const {initialState,inputFields,client_data} = useClientInfo(id);
 
     const [fieldValues, setFieldValues] = useState<InitialStateType>(initialState)

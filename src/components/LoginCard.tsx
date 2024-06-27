@@ -27,7 +27,7 @@ const LoginCard: React.FC<LoginCardProps> =
             <div className="form-control">
               <TextFieldWithIcons 
               onTextChange={onEmailChange} 
-              icon={<HiOutlineMail/>} 
+              icon={<HiOutlineMail className="w-6 h-6 opacity-40"/>} 
               placeholder="Digite seu email"
               label="Email"
               border/>
@@ -35,7 +35,7 @@ const LoginCard: React.FC<LoginCardProps> =
             <div className="form-control">
               <TextFieldWithIcons 
               onTextChange={onPasswordChange} 
-              icon={<HiOutlineLockClosed/>} 
+              icon={<HiOutlineLockClosed className="w-6 h-6 opacity-40"/>} 
               placeholder="Digite sua senha"
               label="Password"
               border/>

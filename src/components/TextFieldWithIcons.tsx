@@ -23,7 +23,7 @@ const TextFieldWithIcons: React.FC<TextFieldWithIconsProps> = ({
         <span className="label-text">{label}</span>
       </label>
     )}
-      <label className={`focus:border-none input ${border && "border-[#D6D9DE]"} ${className} flex items-center gap-2`}>
+      <label className={`focus:border-none input ${border && "border-[#D6D9DE]"} ${className} flex items-center `}>
         {icon}
         <input  
           placeholder={placeholder}

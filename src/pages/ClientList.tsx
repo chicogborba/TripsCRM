@@ -8,14 +8,12 @@ import { mock_data } from "../mock/mock";
 
 const ClientList = () => {
 
-
+    const [data, setData] = useState(mock_data);
     const nav = useNavigate();
+
     const handleClick = (id: string) => {
         nav("/info/" + id, { replace: true });
     }
-
-    const [data, setData] = useState(mock_data);
-
     const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
         const normalizedSearch = e.target.value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
         const filteredData = mock_data.filter(item => item.name.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
