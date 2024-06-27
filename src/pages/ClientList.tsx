@@ -42,6 +42,8 @@ const ClientList = () => {
                         <Card
                         key={index}
                         name={item.name}
+                        email={item.email}
+                        whatsapp={item.phone}
                         nextTravel={item.firstTrip}
                         recurrence={item.recurrence}
                         onClick={() => handleClick(item.id)}/>

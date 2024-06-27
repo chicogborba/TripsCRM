@@ -157,7 +157,7 @@ export const mock_data: MockDataType[] = [
         "name": "Lucas Paralelepipedo",
         "email": "luccas@paralelo.com",
         "birthDate": "21/06/2003",
-        "phone": "51933331212",
+        "phone": "555198251091",
         "recurrence": "Bimestral",
         "job": "Blogueiro",
         "origin": "Instagram",
