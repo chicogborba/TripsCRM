@@ -24,6 +24,12 @@ const formatValue = (type: FormTextFieldType, value: string): string => {
       return value.replace(/\D/g, '')
                   .replace(/^(\d{2})(\d)/g, '($1) $2') // Coloca parênteses em volta dos dois primeiros dígitos
                   .replace(/(\d{5})(\d)/, '$1-$2'); // Coloca hífen após os cinco dígitos
+    case 'date':
+      // Implementar formatação de data pra só aceitar numeros no formato dd/mm/yyyy
+      return value.replace(/\D/g, '')
+                  .replace(/(\d{2})(\d)/, '$1/$2') // Coloca barra após os dois primeiros dígitos
+                  .replace(/(\d{2})(\d)/, '$1/$2') // Coloca barra após os quatro primeiros dígitos
+                  .replace(/(\/\d{4})\d+?$/, '$1'); // Permite apenas 10 dígitos
     default:
       return value; // Não altera o valor para os outros tipos
   }
@@ -37,8 +43,7 @@ const FormTextField: React.FC<FormTextFieldProps> = ({
   disabled = false
 }) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const formattedValue = type === 'doc' || type === 'phone' ? formatValue(type, e.target.value) : e.target.value;
-    onChange({...e, target: {...e.target, value: formattedValue}});
+    onChange({...e, target: {...e.target, value: e.target.value}});
   };
 
   return (
@@ -47,10 +52,10 @@ const FormTextField: React.FC<FormTextFieldProps> = ({
         <span className="label-text font-semibold text-md">{label}</span>
       </div>
       <input
-        type={type === 'text' || type === 'doc' || type === 'phone' ? 'text' : type}
+        type={'text'}
         placeholder="Type here"
         className="input input-bordered max-w-full w-full "
-        value={value}
+        value={formatValue( type ,value)}
         onChange={handleChange}
         disabled={disabled}
       />

@@ -2,12 +2,14 @@ import { FiEdit } from "react-icons/fi";
 
 export interface HeaderProps {
   onAddTrip: () => void;
+  onEdit: () => void;
   name: string;
   number: string;
 }
 
 const Header: React.FC<HeaderProps> = ({
   onAddTrip, 
+  onEdit,
   name, 
   number
 }) => {
@@ -20,7 +22,7 @@ const Header: React.FC<HeaderProps> = ({
   return (
     <>
       <div className="flex items-center relative z-10 space justify-between">
-      <div className=" flex items-center">
+      <div className="flex items-center">
       <div className=" avatar placeholder mr-6 ">
           <div className="bg-primary text-white rounded-full w-20">
               <span className="text-2xl">{getNameInitials(name)}</span>
@@ -29,7 +31,7 @@ const Header: React.FC<HeaderProps> = ({
       <h2 className="text-2xl font-bold ">{name}</h2>
       <div className="border-black border-2 rounded-full h-6 mx-2 w-0"/>
       <h2 className="text-2xl font-bold">{number}</h2>
-      <FiEdit className="ml-4 opacity-30 w-5 h-5"/>
+      <FiEdit onClick={onEdit} className="ml-4 opacity-30 w-5 h-5 hover:cursor-pointer hover:opacity-50"/>
       </div>
       <button onClick={onAddTrip} className="btn btn-sm btn-primary  mb-4">Adicionar Viajem</button>
       </div>

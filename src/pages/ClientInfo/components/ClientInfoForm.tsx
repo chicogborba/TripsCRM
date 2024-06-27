@@ -1,37 +1,21 @@
-import React, { useState } from 'react';
-import FormTextField, { FormTextFieldType } from "../../../components/FormTextField";
+import React from 'react';
+import FormTextField from "../../../components/FormTextField";
+import { InitialStateType, InputField } from "../useClientInfo";
 
-type InputField = {
-  label: string;
-  type: FormTextFieldType;
-};
+export interface ClientInfoFormProps {
+  disabled?: boolean;
+  onChange: (label: string, value: string) => void;
+  fieldValues: InitialStateType;
+  inputFields: InputField[];
 
-type InitialStateType = {
-  [key: string]: string;
-};
+}
 
-const inputFields: InputField[] = [
-  { label: "Data de Nascimento", type: "date" },
-  { label: "Telefone", type: "phone" },
-  { label: "Endereço de Email", type: "text" },
-  { label: "CPF", type: "doc" },
-  { label: "Ocupação", type: "text" },
-  { label: "Origem", type: "text" },
-  { label: "Primaira Consulta", type: "date" },
-  { label: "Recorrência", type: "date" },
-];
-
-const initialState = inputFields.reduce<InitialStateType>((acc, field) => {
-  acc[field.label] = "";
-  return acc;
-}, {});
-
-const ClientInfoForm = () => {
-  const [fieldValues, setFieldValues] = useState<InitialStateType>(initialState);
-
-  const handleChange = (label: string, value: string) => {
-    setFieldValues(prev => ({ ...prev, [label]: value }));
-  };
+const ClientInfoForm: React.FC<ClientInfoFormProps> = ({
+  disabled,
+  onChange,
+  fieldValues,
+  inputFields
+}) => {
 
   return (
     <>
@@ -39,10 +23,11 @@ const ClientInfoForm = () => {
       <div className="grid grid-cols-2 gap-4 pr-20">
         {inputFields.map((field, index) => (
           <FormTextField
+            disabled={disabled}
             key={index}
             label={field.label}
             value={fieldValues[field.label]}
-            onChange={(e) => handleChange(field.label, e.target.value)}
+            onChange={(e) => onChange(field.label, e.target.value)}
             type={field.type}
           />
         ))}

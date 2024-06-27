@@ -4,46 +4,22 @@ import TextFieldWithIcons from "../components/TextFieldWithIcons";
 import { HiSearch } from "react-icons/hi";
 import Card from "../components/Card";
 import { useNavigate } from "react-router-dom";
+import { mock_data } from "../mock/mock";
 
 const ClientList = () => {
 
-    const initialData = [
-        {
-            nome: "Victor Mondin",
-            proxima_viajem: "2022/12/12",
-            recorencia: "Mensal",
-            id: "1"
-        },
-        {
-            nome: "Maria Silva",
-            proxima_viajem: "2022/12/12",
-            recorencia: "Anual",
-            id: "2"
-        },
-        {
-            nome: "José Silva",
-            proxima_viajem: "2022/12/12",
-            recorencia: "Mensal",
-            id: "3"
-        },
-        { 
-            nome: "Ana Silva",
-            proxima_viajem: "2022/12/12",
-            recorencia: "Anual",
-            id: "4"
-        }
-    ]
 
     const nav = useNavigate();
     const handleClick = (id: string) => {
         nav("/info/" + id, { replace: true });
     }
 
-    const [data, setData] = useState(initialData);
+    const [data, setData] = useState(mock_data);
 
     const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
         const normalizedSearch = e.target.value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
-        const filteredData = initialData.filter(item => item.nome.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().includes(normalizedSearch));
+        const filteredData = mock_data.filter(item => item.name.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase().includes(normalizedSearch));
         setData(filteredData);
     }
 
@@ -65,9 +41,9 @@ const ClientList = () => {
                     {data.map((item, index) => (
                         <Card
                         key={index}
-                        name={item.nome}
-                        nextTravel={item.proxima_viajem}
-                        recurrence={item.recorencia}
+                        name={item.name}
+                        nextTravel={item.firstTrip}
+                        recurrence={item.recurrence}
                         onClick={() => handleClick(item.id)}/>
                     ))}
                 </div>  
