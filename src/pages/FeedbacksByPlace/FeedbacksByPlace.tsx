@@ -54,9 +54,9 @@ const FeedbacksByPlace = () => {
                   ))}
                 </select>
                 </div>
-                <div className="mt-8 rounded-3xl overflow-hidden px-10 flex flex-col justify-center">
+                <div className="mt-8 rounded-3xl shaodw-2xl overflow-hidden px-10 flex flex-col justify-center">
                   <Map data={data} position={position} onMarkerClick={onMarkerClick}/>
-                  <div className="bg-white rounded-3xl h-full p-8 shadow-md -translate-y-10">
+                  <div className="bg-white rounded-3xl h-full p-8 shadow-md -translate-y-16 ">
                     {feedbacks.length > 0 && (
                       <div className="flex flex-col mt-8">
                         <div className="flex justify-between mx-16 py-4">

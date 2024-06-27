@@ -36,7 +36,7 @@ const Map: React.FC<MapProps> = ({
     });
 
   return (
-    <MapContainer  center={position} zoom={9} maxZoom={9} scrollWheelZoom={true} className=" rounded-3xl w-full h-96">
+    <MapContainer  center={position} zoom={9} maxZoom={9} scrollWheelZoom={true} className="shadow-2xl rounded-3xl w-full h-96">
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
