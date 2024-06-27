@@ -1,5 +1,5 @@
 import Sidebar from "../../components/Sidebar"
-import { useNavigate, useParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
 import ClientInfoHeader from "./components/ClientInfoHeader";
 import VisitedPlaces from "./components/VisitedPlaces";
 import ClientInfoForm from "./components/ClientInfoForm";
@@ -9,7 +9,6 @@ import useClientInfo, { InitialStateType } from "./useClientInfo";
 
 const ClientInfo = () => {
     const { id } = useParams();
-    const nav = useNavigate();
 
     const {initialState,inputFields,client_data} = useClientInfo(id);
 
@@ -19,18 +18,15 @@ const ClientInfo = () => {
     const handleChange = (label: string, value: string) => {
     setFieldValues(prev => ({ ...prev, [label]: value }));
     };
-    const handleClick = () => {
-        nav("/list", { replace: true });
-    }
     
     return (
         <div className="flex flex-row h-screen">
-            <Sidebar selected={false} onClick={handleClick}/>
+            <Sidebar selected={""}/>
             <div className="w-full p-8 overflow-auto  shadow-xl m-8 rounded-xl ">
                 <ClientInfoHeader 
                     name={client_data?.name || ""}
                     number={client_data?.id || ""}
-                    onAddTrip={() => console.log("a")}
+                    onAddTrip={undefined}
                     onEdit={() => setIsEditingDisabled(!isEditingDisabled)}
                 />
                 <div className="flex ">

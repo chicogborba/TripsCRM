@@ -12,7 +12,9 @@ export type MockDataType = {
     firstTrip: string,
     history: {
         feedback: string,
-        date: string
+        date: string,
+        city: string,
+        cord: string
     }[],
     visits: {
         date: string,
@@ -35,11 +37,15 @@ export const mock_data: MockDataType[] = [
         "history": [
             {
                 "feedback": "Muito bom",
-                "date": "16/06/2024"
+                "date": "16/06/2024",
+                "city": "Porto Alegre",
+                "cord": "-30.034647, -51.217658"
             },
             {
                 "feedback": "Incrível!",
-                "date": "17/06/2024"
+                "date": "17/06/2024",
+                "city": "Gramado",
+                "cord": "-29.370574, -50.876548"
             }
         ],
         "visits": [
@@ -67,15 +73,21 @@ export const mock_data: MockDataType[] = [
         "history": [
             {
                 "feedback": "O Hotel poderia estar mais limpo",
-                "date": "12/05/2022"
+                "date": "12/05/2022",
+                "city": "Porto Alegre",
+                "cord": "-30.034647, -51.217658"
             },
             {
                 "feedback": "Comida excelente!",
-                "date": "21/06/2023"
+                "date": "21/06/2023",
+                "city": "Gramado",
+                "cord": "-29.370574, -50.876548",
             },
             {
                 "feedback": "Belezas naturais incomparáveis",
-                "date": "01/03/2024"
+                "date": "01/03/2024",
+                "city": "Canela",
+                "cord": "-29.366314, -50.811115",
             }
         ],
         "visits": [
@@ -107,15 +119,21 @@ export const mock_data: MockDataType[] = [
         "history": [
             {
                 "feedback": "Muito bom",
-                "date": "14/02/2024"
+                "date": "14/02/2024",
+                "city": "Disney",
+                "cord": "28.385233, -81.563873"
             },
             {
                 "feedback": "Incrível!",
-                "date": "15/03/2024"
+                "date": "15/03/2024",
+                "city": "Gramado",
+                "cord": "-29.370574, -50.876548"
             },
             {
                 "feedback": "O Hotel conta com uma ótima estrutura",
-                "date": "17/04/2024"
+                "date": "17/04/2024",
+                "city": "Canela",
+                "cord": "-29.366314, -50.811115"
             }
         ],
         "visits": [
@@ -147,7 +165,9 @@ export const mock_data: MockDataType[] = [
         "history": [
             {
                 "feedback": "Melhor viagem da minha vida!",
-                "date": "14/06/2024"
+                "date": "14/06/2024",
+                "city": "Beto Carrero",
+                "cord": "-26.805348, -48.632240"
             }
         ],
         "visits": [

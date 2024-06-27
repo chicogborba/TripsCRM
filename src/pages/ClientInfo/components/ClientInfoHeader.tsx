@@ -1,10 +1,10 @@
 import { FiEdit } from "react-icons/fi";
 
 export interface HeaderProps {
-  onAddTrip: () => void;
   onEdit: () => void;
   name: string;
   number: string;
+  onAddTrip?: () => void ;
 }
 
 const Header: React.FC<HeaderProps> = ({

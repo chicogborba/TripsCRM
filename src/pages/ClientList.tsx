@@ -25,7 +25,7 @@ const ClientList = () => {
 
     return (
         <div className="flex flex-row h-screen">
-            <Sidebar selected={true}/>
+            <Sidebar selected={"list"}/>
             <div className="w-full p-8 overflow-auto  shadow-xl m-8 rounded-xl ">
                 <h2 className="text-3xl font-bold mt-1 mb-6">Fulano Silva</h2>
                 <div className="flex gap-4 items-center">
